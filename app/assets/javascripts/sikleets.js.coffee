@@ -3,7 +3,11 @@ window.Sikleets =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    new Sikleets.Routers.SikleetsRouter()
+    Backbone.history.start
+      pushState: true
+      root: '/'
 
 $(document).ready ->
   Sikleets.initialize()
