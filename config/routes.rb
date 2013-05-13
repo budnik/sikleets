@@ -1,4 +1,5 @@
 Sikleets::Application.routes.draw do
+  resource :timeline, only: :show
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
