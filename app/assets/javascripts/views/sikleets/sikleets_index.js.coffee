@@ -1,6 +1,7 @@
 class Sikleets.Views.SikleetsIndex extends Backbone.View
   template: JST['sikleets/index']
   tagName: 'table'
+  className: 'table table-hover'
   id: 'tweets'
 
   render: ->

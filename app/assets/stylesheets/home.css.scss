@@ -1,3 +1,33 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.label.header{
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-nav{
+  padding: 0;
+}
+
+#tweets{
+  tr td.text{
+    font-size: 1.2em;
+  }
+  tr:hover {
+    td.like i{
+    font-size: 1.2em;
+    }
+    td.like:hover i{
+    text-shadow: 1.5px 1.5px 5px lightskyblue;
+  }}
+  th.like{
+    color: red;
+  }
+  td.like{
+    vertical-align: middle;
+    min-width: 1.2em;
+  }
+  td.time{
+    min-width: 7em;
+}}

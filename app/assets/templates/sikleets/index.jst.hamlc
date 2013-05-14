@@ -1,5 +1,7 @@
 %thead  
   %tr
-    %th id
-    %th text
+    %th.like
+      %i.icon-heart
+    %th.text text
+    %th.time posted
 %tbody

@@ -1,2 +1,4 @@
-%th=@model.get "id"
-%td=@model.get "text"
+%td.like
+  %i.icon-star-empty
+%td.text= @model.get "text"
+%td.time= @model.get "timeDistance"

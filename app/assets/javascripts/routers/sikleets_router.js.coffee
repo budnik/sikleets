@@ -6,4 +6,4 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
     timeline = new Sikleets.Collections.Timeline()
     timeline.fetch().success =>
       tweets = new Sikleets.Views.SikleetsIndex collection: timeline
-      $('#main-content').append tweets.render().el
+      $('#main-content').html tweets.render().el
