@@ -1,4 +1,7 @@
 %td.like
-  %i.icon-star-empty
+  - if @model.get "favorite"
+    %i.icon-star.favorite
+  - else
+    %i.icon-star-empty
 %td.text= @model.get "text"
 %td.time= @model.get "timeDistance"

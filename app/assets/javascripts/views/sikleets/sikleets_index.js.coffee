@@ -3,6 +3,8 @@ class Sikleets.Views.SikleetsIndex extends Backbone.View
   tagName: 'table'
   className: 'table table-hover'
   id: 'tweets'
+  initialize: ->
+    @collection.on "change", @render, @
 
   render: ->
     @$el.html @template

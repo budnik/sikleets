@@ -14,11 +14,15 @@
   tr td.text{
     font-size: 1.2em;
   }
+
+  td.like i.favorite{
+    color: gold;
+  }
   tr:hover {
     td.like i{
     font-size: 1.2em;
     }
-    td.like:hover i{
+    td.like:hover i:not(.favorite){
     text-shadow: 1.5px 1.5px 5px lightskyblue;
   }}
   th.like{

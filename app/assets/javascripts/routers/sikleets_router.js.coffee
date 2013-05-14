@@ -18,10 +18,13 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
       false
 
   favorites: ->
-    console.log "sdafsdafsda"
+    if $('#tweets').html()
+
+    else
+      $('#main-content .header h1').html 'you have no favorites'
 
   index: ->
     timeline = new Sikleets.Collections.Timeline()
     timeline.fetch().success =>
-      tweets = new Sikleets.Views.SikleetsIndex collection: timeline
-      $('#main-content').html tweets.render().el
+      @tweets = new Sikleets.Views.SikleetsIndex collection: timeline
+      $('#main-content').html @tweets.render().el
