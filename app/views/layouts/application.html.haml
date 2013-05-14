@@ -38,10 +38,20 @@
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li.nav-header Fun things to do:
+              %li
+                = link_to "//github.com/budnik/Sikleets" do
+                  %i.icon-github
+                  Fork me
+              %li
+                =link_to "/path1" do
+                  %i.icon-refresh
+                  Refresh
+              %li
+                = link_to "/path2" do
+                  %i.icon-cloud-download
+                  More tweets
+
         .span9#main-content
           = bootstrap_flash
           = yield
