@@ -1,0 +1,13 @@
+.modal-header
+  %button.close{type: "button"}
+    ×
+  %h4 Favorite tweets
+.modal-body
+  %table.table
+    %thead
+      %tr
+        %th text
+        %th posted
+    %tbody
+.modal-footer
+  %button.btn.close{type: "button"} OK

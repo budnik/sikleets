@@ -4,7 +4,7 @@ window.Sikleets =
   Views: {}
   Routers: {}
   initialize: ->
-    new Sikleets.Routers.SikleetsRouter()
+    @rtr = new Sikleets.Routers.SikleetsRouter()
     Backbone.history.start
       pushState: true
       root: '/'

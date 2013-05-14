@@ -4,4 +4,4 @@
   - else
     %i.icon-star-empty
 %td.text= @model.get "text"
-%td.time= @model.get "timeDistance"
+%td.time{title: "#{@model.get 'created_at'}"}= @model.get "timeDistance"

@@ -1,8 +1,9 @@
 class Sikleets.Routers.SikleetsRouter extends Backbone.Router
   routes:
+    '': 'index'
     'more': 'more'
     'favorites': 'favorites'
-    '*notfound': 'index'
+    '*notfound': 'notFound'
 
   initialize: ->
     @ajaxifyLinks()
@@ -17,14 +18,29 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
         @navigate url, trigger: true
       false
 
-  favorites: ->
-    if $('#tweets').html()
-
+  more: ->
+    unless $('#tweets').html()
+      @navigate '/', trigger: true
     else
+      lastTweet = @timeline.min (e)-> e.get "id"
+      @timeline.fetch remove: false, data: {older_than: lastTweet.get("id")}
+      @navigate '/', trigger: false
+
+  favorites: ->
+    unless $('#tweets').html()
       $('#main-content .header h1').html 'you have no favorites'
+    else
+      favs = new Sikleets.Collections.Timeline @timeline.where favorite: true
+      console.log favs.toJSON()
+      modal = new Sikleets.Views.FavoritesModal
+        collection: favs
+      $(modal.render().el).appendTo($('body')).modal()
 
   index: ->
-    timeline = new Sikleets.Collections.Timeline()
-    timeline.fetch().success =>
-      @tweets = new Sikleets.Views.SikleetsIndex collection: timeline
-      $('#main-content').html @tweets.render().el
+    @timeline = new Sikleets.Collections.Timeline
+    @timeline.fetch().success =>
+      tweets = new Sikleets.Views.SikleetsIndex collection: @timeline
+      $('#main-content').html tweets.render().el
+
+  notFound: ->
+    @navigate '/', trigger: false

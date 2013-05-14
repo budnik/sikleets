@@ -4,6 +4,7 @@ class Sikleets.Views.SikleetsIndex extends Backbone.View
   className: 'table table-hover'
   id: 'tweets'
   initialize: ->
+    @collection.on "sync", @render, @
     @collection.on "change", @render, @
 
   render: ->
