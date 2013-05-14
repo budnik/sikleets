@@ -2,6 +2,7 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
   routes:
     '': 'index'
     'more': 'more'
+    'refresh': 'refresh'
     'favorites': 'favorites'
     '*notfound': 'notFound'
 
@@ -44,3 +45,6 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
 
   notFound: ->
     @navigate '/', trigger: false
+
+  refresh: ->
+    @navigate '/', trigger: true

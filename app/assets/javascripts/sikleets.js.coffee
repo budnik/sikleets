@@ -7,7 +7,6 @@ window.Sikleets =
     @rtr = new Sikleets.Routers.SikleetsRouter()
     Backbone.history.start
       pushState: true
-      root: '/'
 
 $(document).ready ->
   Sikleets.initialize()
