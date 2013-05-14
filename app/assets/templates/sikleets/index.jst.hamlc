@@ -2,6 +2,6 @@
   %tr
     %th.like
       %i.icon-heart
-    %th.text text
+    %th.text Tiny bits of wisdom:
     %th.time posted
 %tbody

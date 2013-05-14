@@ -1,6 +1,24 @@
 class Sikleets.Routers.SikleetsRouter extends Backbone.Router
   routes:
+    'more': 'more'
+    'favorites': 'favorites'
     '*notfound': 'index'
+
+  initialize: ->
+    @ajaxifyLinks()
+
+  ajaxifyLinks: ->
+    $(document).on "click", "a", (event)=>
+      href = $(event.currentTarget).attr('href')
+      return if href.match /^https?:/
+      if !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey
+        event.preventDefault()
+        url = href?.replace('\#\!\/','')
+        @navigate url, trigger: true
+      false
+
+  favorites: ->
+    console.log "sdafsdafsda"
 
   index: ->
     timeline = new Sikleets.Collections.Timeline()
