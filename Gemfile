@@ -23,9 +23,9 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails', "~> 1.0", require: false
+  gem 'cucumber-rails', require: false
+  gem 'rspec-expectations'
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'poltergeist'
 end

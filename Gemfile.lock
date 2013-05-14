@@ -59,7 +59,6 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (~> 3.0)
-    database_cleaner (0.9.1)
     diff-lcs (1.2.4)
     eco (1.0.0)
       coffee-script
@@ -193,13 +192,13 @@ DEPENDENCIES
   backbone-on-rails
   capybara
   coffee-rails (~> 3.2.1)
-  cucumber-rails (~> 1.0)
-  database_cleaner
+  cucumber-rails
   haml
   haml_coffee_assets
   jquery-rails
   poltergeist
   rails (= 3.2.13)
+  rspec-expectations
   rspec-rails
   sass-rails (~> 3.2.3)
   sextant

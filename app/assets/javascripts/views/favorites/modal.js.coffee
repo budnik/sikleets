@@ -3,6 +3,7 @@ class Sikleets.Views.FavoritesModal extends Backbone.View
   rowTemplate: JST['favorites/row']
   attributes:
     class: 'modal hide fade'
+    id: 'favorite-tweets'
     tabindex: -1
     'aria-labelledby': 'bulkModalLabel'
     'aria-hidden': true
