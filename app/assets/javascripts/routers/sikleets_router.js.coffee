@@ -31,10 +31,11 @@ class Sikleets.Routers.SikleetsRouter extends Backbone.Router
     unless $('#tweets').html()
       $('#main-content .header h1').html 'you have no favorites'
     else
-      favs = new Sikleets.Collections.Timeline @timeline.where favorite: true
-      console.log favs.toJSON()
+      favs = @timeline.where favorite: true
+      return @refresh() if !favs.length
+      collection = new Sikleets.Collections.Timeline favs
       modal = new Sikleets.Views.FavoritesModal
-        collection: favs
+        collection: collection
       $(modal.render().el).appendTo($('body')).modal()
 
   index: ->
