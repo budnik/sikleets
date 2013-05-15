@@ -4,6 +4,9 @@
 1. First screen should show last 20 tweets of user @ciklum together with date and text. Together with adding some tweet to favorites.
 2. Favorites screen, where all favorites ciklum tweets would be shown. With possibility to remove some tweets from favorites.
 
+=== Demo:
+==== http://sikleets.herokuapp.com
+
 === Technologies:
 *   Ruby 1.9
 *   Rails 3.2
