@@ -6,8 +6,8 @@
   %table.table
     %thead
       %tr
-        %th text
-        %th posted
+        %th.text text
+        %th.time posted
     %tbody
 .modal-footer
   %button.btn.close{type: "button"} OK
